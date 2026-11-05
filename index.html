@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yuqi Meng</title>
+<meta name="description" content="Yuqi Meng — M.S. Business Analytics at Columbia University. Investment banking, risk management and econometrics research experience.">
+<style>
+  :root {
+    --navy: #0b2545;
+    --navy-soft: #3b5272;
+    --blue: #75aadb;
+    --blue-deep: #2f6aa3;
+    --blue-light: #b9d9eb;
+    --blue-wash: #eef6fb;
+    --bg: #ffffff;
+    --line: #d6e6f1;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--navy);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  a { color: var(--blue-deep); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+  /* Navigation */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+  .brand { font-weight: 700; letter-spacing: .02em; color: var(--navy); text-decoration: none; white-space: nowrap; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; overflow-x: auto; }
+  nav li a {
+    display: block; padding: 6px 12px; border-radius: 999px;
+    color: var(--navy-soft); text-decoration: none; font-size: .92rem; white-space: nowrap;
+  }
+  nav li a:hover { background: var(--blue-wash); color: var(--navy); }
+
+  /* Hero */
+  .hero { background: linear-gradient(180deg, var(--blue-light) 0%, var(--blue-wash) 100%); border-bottom: 1px solid var(--line); }
+  .hero .wrap { display: grid; grid-template-columns: 180px 1fr; gap: 36px; align-items: center; padding-top: 56px; padding-bottom: 56px; }
+  .hero img {
+    width: 180px; height: 180px; object-fit: cover; object-position: center 20%;
+    border-radius: 50%; border: 5px solid #fff; box-shadow: 0 6px 20px rgba(11,37,69,.15);
+  }
+  .hero h1 { margin: 0 0 4px; font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.15; }
+  .hero .tagline { margin: 0 0 18px; font-size: 1.1rem; color: var(--navy-soft); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .chip { background: #fff; border: 1px solid var(--blue); color: var(--navy); border-radius: 999px; padding: 3px 12px; font-size: .85rem; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    text-decoration: none; border: 2px solid var(--navy); color: var(--navy); background: transparent;
+  }
+  .btn.primary { background: var(--navy); color: #fff; }
+  .btn:hover { background: var(--navy); color: #fff; }
+  .btn.primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+
+  /* Sections */
+  section { padding: 56px 0 8px; }
+  h2 {
+    margin: 0 0 24px; font-size: 1.5rem; display: flex; align-items: center; gap: 12px;
+  }
+  h2::after { content: ""; flex: 1; height: 2px; background: var(--blue-light); }
+
+  .grid { display: grid; gap: 18px; }
+  .grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--blue);
+    border-radius: var(--radius); padding: 22px 24px;
+    box-shadow: 0 1px 3px rgba(11,37,69,.05);
+  }
+  .card header { margin-bottom: 10px; }
+  .org { margin: 0; font-size: 1.12rem; font-weight: 700; }
+  .role { margin: 0; color: var(--blue-deep); font-weight: 600; }
+  .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--navy-soft); font-size: .88rem; margin-top: 2px; }
+  .card ul { margin: 12px 0 0; padding-left: 20px; }
+  .card li { margin-bottom: 8px; }
+  .card li::marker { color: var(--blue); }
+  .card p { margin: 8px 0 0; }
+  .gpa { display: inline-block; background: var(--blue-wash); border: 1px solid var(--blue-light); border-radius: 6px; padding: 0 8px; font-size: .85rem; font-weight: 600; }
+
+  /* Others */
+  dl { margin: 0; display: grid; grid-template-columns: 130px 1fr; gap: 10px 16px; }
+  dt { font-weight: 700; color: var(--blue-deep); }
+  dd { margin: 0; }
+
+  /* Contact / footer */
+  .contact { background: var(--navy); color: #fff; margin-top: 56px; padding: 48px 0; }
+  .contact h2 { color: #fff; }
+  .contact h2::after { background: var(--blue); }
+  .contact a { color: var(--blue-light); }
+  .contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .contact span { display: inline-block; width: 80px; color: var(--blue); font-weight: 600; }
+  footer { background: var(--navy); color: var(--blue-light); text-align: center; font-size: .82rem; padding: 0 20px 28px; border-top: 0; }
+
+  @media (max-width: 680px) {
+    .hero .wrap { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 22px; }
+    .chips, .btns { justify-content: center; }
+    dl { grid-template-columns: 1fr; gap: 2px; }
+    dd { margin-bottom: 10px; }
+    nav .wrap { height: auto; padding-top: 8px; padding-bottom: 8px; flex-direction: column; align-items: flex-start; gap: 4px; }
+    nav ul { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="#top">Yuqi Meng</a>
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#others">Others</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img src="1cb7f72cc0b3712d238e36bf2c3693c6.JPG" alt="Portrait of Yuqi Meng">
+    <div>
+      <h1>Yuqi Meng</h1>
+      <p class="tagline">M.S. Business Analytics candidate at Columbia University · Economics &amp; Mathematics, NYU</p>
+      <div class="chips">
+        <span class="chip">Investment Banking</span>
+        <span class="chip">Risk Management</span>
+        <span class="chip">Econometrics</span>
+        <span class="chip">CFA Level 1 Passed</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="mailto:ym3119@columbia.edu">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/yuqimeng" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/MurphyMeng0818" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="Yuqi_Meng_Resume.pdf">Resume (PDF)</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="grid two">
+      <article class="card">
+        <header>
+          <p class="org">Columbia University</p>
+          <p class="role">Master of Science in Business Analytics</p>
+          <div class="meta"><span>New York, U.S.</span><span>Aug 2025 – Expected Dec 2026</span></div>
+        </header>
+        <span class="gpa">GPA 3.92 / 4.0</span>
+        <p><strong>Courses:</strong> Business Analytics, Marketing Analytics, Data Analytics, Corporate Finance, Accounting, Capital Market</p>
+      </article>
+      <article class="card">
+        <header>
+          <p class="org">New York University</p>
+          <p class="role">Bachelor of Arts in Economics and Mathematics</p>
+          <div class="meta"><span>New York, U.S.</span><span>Aug 2021 – May 2025</span></div>
+        </header>
+        <span class="gpa">GPA 3.65 / 4.0</span>
+        <p><strong>Courses:</strong> Mathematics, Economics, Statistics, Econometrics, Programming and Data Science, Finance</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Internship Experience</h2>
+    <div class="grid">
+      <article class="card">
+        <header>
+          <p class="org">Real Value Capital</p>
+          <p class="role">Investment Banking Intern</p>
+          <div class="meta"><span>New York, U.S.</span><span>Dec 2025 – Feb 2026</span></div>
+        </header>
+        <ul>
+          <li>Supported a CAD 3.5mm private placement (CAD 12mm pre-money valuation) for a Canadian AI/IoT smart-home risk-prevention company; analyzed its AI water-shutoff, AI fire-detection and smart-security product lines and “Risk Prevention as a Service” subscription model to frame key investment highlights</li>
+          <li>Analyzed Moen’s acquisition of Flo Technologies as a smart-home precedent transaction, mapping Flo’s $39.3mm funding history from seed through Series B to validate investor appetite and strategic-exit pathways in the sector</li>
+          <li>Screened 9 potential investors across IoT, PropTech and InsurTech VCs and insurer-backed strategic investors (e.g., USAA, State Farm), assessing sector focus, stage and strategic fit; drafted the investor outreach email template</li>
+          <li>Authored an AI-sector IPO trend report on listing windows, valuation drivers and regulation for AI chip and enterprise AI software companies; completed 5 additional IPO studies incl. Zeekr (smart EV) and screened 11 European and U.S. healthcare PE/VC funds for a biotech client</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <header>
+          <p class="org">Tianjin Leasing Assets Trading Center Co., Ltd.</p>
+          <p class="role">Risk Management Intern</p>
+          <div class="meta"><span>Tianjin, China</span><span>Jun 2025 – Sep 2025</span></div>
+        </header>
+        <ul>
+          <li>Assisted in due diligence for prospective Asset-Backed Securities (ABS) transactions by collecting and reviewing lease agreements, payment histories and lessee credit files</li>
+          <li>Built and updated cash-flow models for a RMB 1 bn commercial-vehicle lease book, stress-testing receivables and calculating key metrics to flag delinquency risk and trigger early-stage collections</li>
+          <li>Automated repayment monitoring and designed dashboards that visualized monthly cash flows for the securitization pipeline</li>
+          <li>Researched credit-enhancement structures, benchmarked reserve accounts, over-collateralization and excess-spread levels against 15 recent auto-lease ABS deals and delivered risk-management recommendations to the deal team</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <header>
+          <p class="org">King &amp; Wood Mallesons</p>
+          <p class="role">Business Development Intern</p>
+          <div class="meta"><span>New York, U.S.</span><span>Jul 2024 – Aug 2024</span></div>
+        </header>
+        <ul>
+          <li>Drafted RFP responses, capability statements and pitch decks for cross-border M&amp;A and Committee on Foreign Investment in the United States (CFIUS) matters, integrating league-table rankings and recent deal highlights to support BD initiatives</li>
+          <li>Consolidated key market news into daily sector news briefs and weekly sector digests on corporate litigation trends, feeding directly into client alerts and proposal content</li>
+          <li>Built a standardized Business Development (BD) template that combines SWOT analysis, competitor benchmarking and client-mapping; adopted by the team to prioritize high-value potential clients</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research Experience</h2>
+    <div class="grid two">
+      <article class="card">
+        <header>
+          <p class="org">Causal Inference in Econometrics, Yale University</p>
+          <p class="role">Team Leader</p>
+          <div class="meta"><span>New Haven, U.S.</span><span>May 2024 – Jul 2024</span></div>
+        </header>
+        <ul>
+          <li>Evaluated the 2011 Wage Theft Prevention Act’s impact on NYS part-time labor supply, constructing a Difference-in-Differences model in R with education, experience, marital status, and gender controls</li>
+          <li>Detected a statistically significant drop in affected workers’ hours in New York State compared to those in Connecticut, Ohio, and Pennsylvania, attributing the decline to the Act via negative interaction-term coefficient</li>
+        </ul>
+      </article>
+      <article class="card">
+        <header>
+          <p class="org">Labor Economics Research, New York University</p>
+          <p class="role">Team Leader</p>
+          <div class="meta"><span>New York, U.S.</span><span>Feb 2024 – May 2024</span></div>
+        </header>
+        <ul>
+          <li>Applied Difference-in-Differences framework to analyze Current Population Survey micro-data and visualize the negative impact of online-learning platforms on traditional-education employment</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="others">
+    <h2>Others</h2>
+    <article class="card">
+      <dl>
+        <dt>Languages</dt><dd>Chinese (Native), English (Fluent, GRE 328/340)</dd>
+        <dt>IT Skills</dt><dd>Programming – Java, R, Python, SQL; Microsoft Office Suite – Word, Excel, PowerPoint; LaTeX; PitchBook</dd>
+        <dt>Qualification</dt><dd>CFA Level 1 Passed</dd>
+        <dt>Interests</dt><dd>Golf, Texas Poker, Tennis</dd>
+      </dl>
+    </article>
+  </section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <ul>
+      <li><span>Email</span><a href="mailto:ym3119@columbia.edu">ym3119@columbia.edu</a></li>
+      <li><span>Mobile</span><a href="tel:+12023683398">(202) 368-3398</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/yuqimeng" target="_blank" rel="noopener">linkedin.com/in/yuqimeng</a></li>
+      <li><span>GitHub</span><a href="https://github.com/MurphyMeng0818" target="_blank" rel="noopener">github.com/MurphyMeng0818</a></li>
+    </ul>
+  </div>
+</section>
+<footer>© 2026 Yuqi Meng</footer>
+
+</body>
+</html>
